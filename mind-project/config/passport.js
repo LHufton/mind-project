@@ -30,10 +30,10 @@ passport.use(
   )
 )
 
-passport.serializeUser(function (user, cb) {
+passport.serializeUser((user, cb) => {
   cb(null, user._id)
 })
 
-passport.deserializeUser(async function (userId, cb) {
+passport.deserializeUser(async (userId, cb) => {
   cb(null, await User.findById(userId))
 })
