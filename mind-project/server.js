@@ -5,16 +5,19 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const methodOverride = require('method-override')
 
+require('dotenv').config()
+require('./config/database')
+
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
+
+const app = express()
 
 // Not defined yet:
 // const indexRouter = require('./routes/index')
 // const moviesRouter = require('./routes/movies')
 // const reviewsRouter = require('./routes/reviews')
 // const performersRouter = require('./routes/performers')
-
-const app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -36,7 +39,6 @@ app.use(function (req, res, next) {
 
 // error handler
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
 

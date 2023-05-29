@@ -13,9 +13,8 @@ passport.use(
     async function (accessToken, refreshToken, profile, cb) {
       try {
         let user = await User.findOne({ googleId: profile.id })
-        // existing user found
         if (user) return cb(null, user)
-        // We have a new user via OAuth!
+
         user = await User.create({
           name: profile.displayName,
           googleId: profile.id,
