@@ -13,12 +13,6 @@ const usersRouter = require('./routes/users')
 
 const app = express()
 
-// Not defined yet:
-// const indexRouter = require('./routes/index')
-// const moviesRouter = require('./routes/movies')
-// const reviewsRouter = require('./routes/reviews')
-// const performersRouter = require('./routes/performers')
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
