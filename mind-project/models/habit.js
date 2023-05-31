@@ -15,7 +15,7 @@ const habitSchema = new Schema({
     type: String,
     required: true
   },
-  didYouTakeYourMeds: {
+  didYouTakeYourMedication: {
     type: String,
     required: true
   }
