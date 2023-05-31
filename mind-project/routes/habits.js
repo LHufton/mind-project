@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const habitsCtrl = require('../controllers/habits')
+router.get('/', habitsCtrl.index)
+router.get('/new', habitsCtrl.new)
 
-module.exports = router;
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
+
+module.exports = router
