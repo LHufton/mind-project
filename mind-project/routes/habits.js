@@ -8,6 +8,6 @@ router.get('/', habitsCtrl.index)
 router.get('/new', ensureLoggedIn, habitsCtrl.new)
 
 router.get('/:id', habitsCtrl.show)
-router.post('/show', ensureLoggedIn, habitsCtrl.create)
+router.post('/', ensureLoggedIn, habitsCtrl.create)
 
 module.exports = router
