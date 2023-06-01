@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const habitsCtrl = require('../controllers/habits')
 const ensureLoggedIn = require('../config/ensureLoggedIn')
+const habitsCtrl = require('../controllers/habits')
 
-router.get('/new', habitsCtrl.new)
 router.get('/', habitsCtrl.index)
+router.get('/new', habitsCtrl.new)
 
-router.post('/', habitsCtrl.create)
+router.get('/:id', habitsCtrl.show)
 router.post('/', ensureLoggedIn, habitsCtrl.create)
 
 module.exports = router

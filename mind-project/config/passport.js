@@ -4,7 +4,6 @@ const User = require('../models/user')
 
 passport.use(
   new GoogleStrategy(
-    // configuration object
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
@@ -13,6 +12,7 @@ passport.use(
     async function (accessToken, refreshToken, profile, cb) {
       try {
         let user = await User.findOne({ googleId: profile.id })
+
         if (user) return cb(null, user)
 
         user = await User.create({
@@ -29,10 +29,10 @@ passport.use(
   )
 )
 
-passport.serializeUser((user, cb) => {
+passport.serializeUser(function (user, cb) {
   cb(null, user._id)
 })
 
-passport.deserializeUser(async (userId, cb) => {
+passport.deserializeUser(async function (userId, cb) {
   cb(null, await User.findById(userId))
 })

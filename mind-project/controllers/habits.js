@@ -18,6 +18,10 @@ async function show(req, res) {
     habit
   })
 }
+function newHabit(req, res) {
+  res.render('habits/new', { title: 'Add Habit', errorMsg: '' })
+}
+
 async function create(req, res) {
   try {
     const habit = await Habit.create(req.body)
@@ -25,8 +29,4 @@ async function create(req, res) {
   } catch (err) {
     res.render('habits/new', { errorMsg: err.message })
   }
-}
-
-function newHabit(req, res) {
-  res.render('habits/new', { title: 'Add Habit', errorMsg: '' })
 }
