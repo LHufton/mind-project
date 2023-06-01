@@ -9,11 +9,13 @@
 </head>
 
 <body>
-  <h2>Views Partials Header</h2>
+  <h2>Mind-project Home Page</h2>
   <nav>
     <a href="/">Home</a>
     <% if (user) { %>
-      <a href="/notes/new">Add Note</a> | <a href="/habits">All Habits</a>
+      <a href="/notes">All Notes</a> |
+      <a href="/notes/new">Add Note</a> |
+      <a href="/habits">All Habits</a> |
       <a href="/habits/new">Add Habit</a> |
       <a href="/logout">Log Out</a>
     <% } else { %>
