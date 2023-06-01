@@ -2,11 +2,19 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const habitSchema = new Schema({
-  name: {
+  what: {
     type: String,
     required: true
   },
-  taskComplete: {
+  when: {
+    type: String,
+    required: true
+  },
+  where: {
+    type: String,
+    required: true
+  },
+  complete: {
     type: String,
     required: true
   }

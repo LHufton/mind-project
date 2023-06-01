@@ -1,4 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const noteSchema = newSchema({})
+const noteSchema = newSchema({
+  comment: String,
+  required: true
+})
