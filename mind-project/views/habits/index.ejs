@@ -1,4 +1,27 @@
 <%- include('../partials/header') %>
-<h1>Views Habits Index Page</h1>
 
+<h1>Views Habits Index Page</h1>
+<table>
+  <thread>
+    <tr>
+      <th>What<br>did<br>you<br>do?<br></th>
+      <th>When<br>did<br>you<br>do<br>it?</th>
+      <th>Where<br>did<br>you<br>do<br>it?</th>
+      <th>How<br>long<br>did<br>it<br>take?</th>
+    </tr>
+  </thread>
+  <tbody>
+    <% habits.forEach(function(h) { %>
+
+      <tr>
+        <td><%= h.what %></td>
+        <td><%= h.when %></td>
+        <td><%= h.where %></td>
+        <td><%= h.howLong %></td>
+        <td><%= h.finished %></td>
+        <td><a href="/habits/<%= h.id %>"></a></td>
+      </tr> 
+    <% }) %>
+  </tbody>
+</table>
 <%- include('../partials/footer') %>

@@ -14,7 +14,11 @@ const habitSchema = new Schema({
     type: String,
     required: true
   },
-  complete: {
+  howLong: {
+    type: String,
+    required: true
+  },
+  finished: {
     type: String,
     required: true
   }

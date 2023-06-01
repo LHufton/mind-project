@@ -9,6 +9,7 @@ const session = require('express-session')
 
 require('dotenv').config()
 require('./config/database')
+require('./config/passport')
 
 const indexRouter = require('./routes/index')
 const habitsRouter = require('./routes/habits')
