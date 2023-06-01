@@ -8,6 +8,6 @@ const noteSchema = new Schema({
   }
 })
 
-router.post('/habits/:id/notes')
+r
 
 module.exports = mongoose.model('Note', noteSchema)

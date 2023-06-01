@@ -13,6 +13,7 @@ require('./config/passport')
 
 const indexRouter = require('./routes/index')
 const habitsRouter = require('./routes/habits')
+const notesRouter = require('./routes/notes')
 
 const app = express()
 
