@@ -7,7 +7,7 @@ const habitsCtrl = require('../controllers/habits')
 router.get('/', habitsCtrl.index)
 router.get('/new', ensureLoggedIn, habitsCtrl.new)
 
-router.get('/:id', habitsCtrl.show)
 router.post('/', ensureLoggedIn, habitsCtrl.create)
+router.get('/:id', habitsCtrl.show)
 
 module.exports = router

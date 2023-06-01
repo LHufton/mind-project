@@ -7,9 +7,9 @@ module.exports = {
   create
 }
 
-function index(req, res) {
+async function index(req, res) {
   res.render('notes/index', {
-    notes: Note.find()
+    notes: await Note.find()
   })
 }
 
