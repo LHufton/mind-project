@@ -7,6 +7,7 @@ module.exports = {
   create
 }
 async function index(req, res) {
+  console.log(req.query)
   res.render('habits/index', {
     habits: await Habit.find()
   })
