@@ -19,3 +19,7 @@ table tbody th {
   padding: 6px;
   border-bottom: 2px solid blue;
 }
+
+label {
+  float: top
+}
