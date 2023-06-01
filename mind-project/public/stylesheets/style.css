@@ -23,3 +23,13 @@ table tbody th {
 label {
   float: top
 }
+
+.delete-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.delete-form button {
+  color: red      
+}
+

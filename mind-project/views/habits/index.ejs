@@ -20,6 +20,14 @@
         <td><%= h.where %></td>
         <td><%= h.howLong %></td>
         <td><%= h.finished %></td>
+        <td><form 
+          action="/habits/<%= h.id%>?_method=DELETE" 
+          method= 'POST'
+          class="delete-form"
+          >
+          <button type="submit">Delete habit</button>
+        </form>
+      </td>
         <td><a href="/habits/<%= h.id %>"></a></td>
       </tr> 
     <% }) %>
