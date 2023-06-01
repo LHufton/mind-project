@@ -3,7 +3,6 @@ const router = express.Router()
 const notesCtrl = require('../controllers/notes')
 
 const ensureLoggedIn = require('../config/ensureLoggedIn')
-const notesCtrl = require('../controllers/notes')
 
 router.get('/', notesCtrl.index)
 router.get('/new', ensureLoggedIn, notesCtrl.new)
