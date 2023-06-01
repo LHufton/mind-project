@@ -14,7 +14,7 @@ async function index(req, res) {
 async function show(req, res) {
   const habit = await Habit.findById(req.params.id)
   res.render('habits/show', {
-    title: 'Habits Schedule',
+    title: 'Habits Tracker',
     habit
   })
 }
