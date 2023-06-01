@@ -8,6 +8,4 @@ const noteSchema = new Schema({
   }
 })
 
-r
-
 module.exports = mongoose.model('Note', noteSchema)
