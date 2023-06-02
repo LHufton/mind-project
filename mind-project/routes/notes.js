@@ -4,7 +4,7 @@ const notesCtrl = require('../controllers/notes')
 
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
-router.get('/', notesCtrl.index)
+router.get('/', ensureLoggedIn, notesCtrl.index)
 router.get('/new', ensureLoggedIn, notesCtrl.new)
 
 router.get('/:id', notesCtrl.show)

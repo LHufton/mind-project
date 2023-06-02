@@ -4,7 +4,7 @@ const router = express.Router()
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 const habitsCtrl = require('../controllers/habits')
 
-router.get('/', habitsCtrl.index)
+router.get('/', ensureLoggedIn, habitsCtrl.index)
 router.get('/new', ensureLoggedIn, habitsCtrl.new)
 
 router.post('/', ensureLoggedIn, habitsCtrl.create)
