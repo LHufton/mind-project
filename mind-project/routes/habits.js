@@ -9,5 +9,6 @@ router.get('/new', ensureLoggedIn, habitsCtrl.new)
 
 router.post('/', ensureLoggedIn, habitsCtrl.create)
 router.get('/:id', habitsCtrl.show)
+router.delete('/:id', habitsCtrl.delete)
 
 module.exports = router

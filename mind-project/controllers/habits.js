@@ -4,8 +4,10 @@ module.exports = {
   index,
   show,
   new: newHabit,
-  create
+  create,
+  delete: deleteHabit
 }
+
 async function index(req, res) {
   console.log(req.query)
   res.render('habits/index', {
@@ -29,5 +31,18 @@ async function create(req, res) {
     res.redirect('/habits')
   } catch (err) {
     res.render('habits/new', { errorMsg: err.message })
+  }
+}
+// async function deleteHabit(req, res) {
+//   await Habit.findOneAndDelete({ _id: req.params.id })
+//   res.render('/habits')
+// }
+async function deleteHabit(req, res) {
+  try {
+    await Habit.findOneAndDelete({ _id: req.params.id })
+    res.redirect('/habits')
+    console.log('Delete controller function hit')
+  } catch (error) {
+    console.log(error)
   }
 }
