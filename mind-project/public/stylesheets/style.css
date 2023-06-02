@@ -1,3 +1,7 @@
+* {
+  background-color: lightblue;
+}
+
 body {
   padding: 50px;
   margin: 0 auto;
@@ -23,7 +27,10 @@ table tbody th {
 label {
   float: top
 }
-
+.note-form {
+  display: inline-block;
+  margin-right: 10px;
+}
 .delete-form {
   display: inline-block;
   margin-right: 10px;
