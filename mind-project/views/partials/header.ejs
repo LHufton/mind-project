@@ -15,10 +15,8 @@
     <% if (user) { %>
       <a href="/habits/new">Add Habit</a> |
       <a href="/habits">All Habits</a> |
-      <a href="/notes">All Notes</a> |
-      <a href="/notes/new">Add Note</a> |
-      <a href="/logout">Log Out</a>
-    <% } else { %>
+      <a href="/logout">Log Out</a> |
+          <% } else { %>
       <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </nav>
