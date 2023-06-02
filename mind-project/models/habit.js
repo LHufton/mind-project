@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const noteSchema = new Schema({
-  comment: {
+  notes: {
     type: String,
     required: true
   },
@@ -37,6 +37,6 @@ const habitSchema = new Schema({
     type: String,
     required: true
   },
-  note: [noteSchema]
+  notes: [noteSchema]
 })
 module.exports = mongoose.model('Habit', habitSchema)

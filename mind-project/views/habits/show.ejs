@@ -16,4 +16,44 @@
   
 </section>
 
+<br><br><h2>Notes</h2>
+<% if (user) { %>
+<form id="note-form" method="POST"
+  action="/habits/<%= habit._id %>/notes">
+  <label>Notes:</label>
+  <textarea name="notes"></textarea><br>
+  
+  <input type="submit" value="Add Note">
+</form>
+<% } %>
+<% if (habit.notes && habit.notes.length) { %>
+
+  <table>
+    <thead>
+      <tr>
+      <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% habit.notes.forEach(function(n) { %>
+        <tr>
+          <td><%= n.notes %></td>
+        <td>
+            <% if (user?._id.equals(n.user)) { %>
+              <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Note</button>
+              </form>
+
+          <%  } %>
+          </td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+<% } else { %>
+  <h5>No Notes Yet</h5>
+
+<% } %>
+
 <%- include('../partials/footer') %>

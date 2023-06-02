@@ -1,34 +1,35 @@
-const Note = require('../models/note')
+const Habit = require('../models/habit')
 
 module.exports = {
-  index,
-  show,
-  new: newNote,
-  create
-}
-
-async function index(req, res) {
-  res.render('notes/index', {
-    notes: await Note.find()
-  })
-}
-
-async function show(req, res) {
-  const note = await Note.findById(req.params.id)
-  res.render('notes/show', {
-    title: 'Notes Tracker',
-    habit
-  })
-}
-function newNote(req, res) {
-  res.render('notes/new', { title: 'Add Note', errorMsg: '' })
+  create,
+  delete: deleteNote
 }
 
 async function create(req, res) {
+  const habit = await Habit.findById(req.params.id)
+  req.body.user = req.user._id
+  req.body.userName = req.user.name
+  req.body.userAvatar = req.user.avatar
+  habit.notes.push(req.body)
   try {
-    const note = await Habit.create(req.body)
-    res.redirect('/notes')
+    await habit.save()
   } catch (err) {
-    res.render('notes/new', { errorMsg: err.message })
+    console.log(err)
   }
+  res.redirect(`/habits/${habit._id}`)
+}
+
+async function deleteNote(req, res, next) {
+  const habits = await Habit.find({})
+
+  habits.forEach((habit, idx) => {
+    habit.notes.forEach((comment, idc) => {
+      if (comment.id === req.params.id) {
+        habit.notes.splice(idc, 1)
+
+        habit.save()
+        res.redirect(`/habits/${habit.id}`)
+      }
+    })
+  })
 }
