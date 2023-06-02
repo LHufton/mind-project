@@ -1,6 +1,21 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const noteSchema = new Schema({
+  comment: {
+    type: String,
+    required: true
+  },
+
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  userName: String,
+  userAvatar: String
+})
+
 const habitSchema = new Schema({
   what: {
     type: String,
@@ -21,6 +36,7 @@ const habitSchema = new Schema({
   finished: {
     type: String,
     required: true
-  }
+  },
+  note: [noteSchema]
 })
 module.exports = mongoose.model('Habit', habitSchema)
