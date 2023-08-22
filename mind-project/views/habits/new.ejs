@@ -1,85 +1,84 @@
-<%- include('../partials/header')%>
+<%- include('../partials/header') %>
 <h1>Add Habits</h1>
 
 <br>
 
-<form id="habits-form" action="/habits" method="POST">
-  <label>What did you do?
-    <select name="what">
-    <option value="Took a shower">Took a shower</option>
-    <option value="Got something to eat">Got something to eat</option>
-    <option value="Took medication">Took medication</option>
-    <option value="Brushed teeth">Brushed teeth</option>
-    <option value="Went for a walk">Went for a walk</option>
-    <option value="Went to the gym">Went to the gym</option>
-    <option value="Got out of bed">Got out of bed</option>
-    <option value="Read a book">Read a book</option>
-    <option value="Meditated">Meditated</option>
-    <option value="Nothing">Nothing</option>
-    <option value="Went to the gym">Went to the gym</option>
-    <option value="Washed your face">Washed your face</option>
-    </select>
-  </label>
-  <br><br>
-  <label>When did you do it?
-    <select name="when">
-    <option value="Morning">Morning</option>
-    <option value="Afternoon">Afternoon</option>
-    <option value="Evening">Evening</option>
-    <option value="Nighttime">Nighttime</option>
-    </select>
-  </label>
-  <br><br>
-  <label>Where did you do it?
-    <select name="where">
-    <option value="Kitchen">Kitchen</option>
-    <option value="Bathroom">Bathroom</option>
-    <option value="Park">Park</option>
-    <option value="Gym">Gym</option>
-    <option value="Bedroom">Bedroom</option>
-    <option value="Living Room">Living Room</option>
-    <option value="Garden">Garden</option>
-    <option value="Dining Room">Dining Room</option>
-    <option value="School">School</option>
-    <option value="Library">Library</option>
-    </select>
-  </label>∏
-  <br><br>
-  <label>How long did it take?
-    <select name="howLong">
-    <option value="1 Minute">1 minute</option>
-    <option value="2 Minutes">2 minutes</option>
-    <option value="5 Minutes">5 minutes</option>
-    <option value="10 Minutes">10 minutes</option>
-    <option value="15 Minutes">15 minutes</option>
-    <option value="30 Minutes">30 Minutes</option>
-    <option value="1 hour">1 hour</option>
-    <option value="2 hours">2 hours</option>
-    <option value="3 hours">3 hours</option>
-    <option value="4 hours">4 hours</option>
-    <option value="5 hours">5 hours</option>
-    <option value="6 hours">6 hours</option>
-    <option value="7 hours">7 hours</option>
-    <option value="8 hours">8 hours</option>
-    <option value="9 hours">9 hours</option>
-    <option value="10 hours">10 hours</option>
-    <option value="11 hours">11 hours</option>
-    <option value="12 hours">12 hours</option>
-    </select>
-  </label>
-  <br><br>
-  <label> Did you finish?
-    <select name="finished">
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </label>    
-  <br><br>
-  <label></label>
-  <br><br>
-  <input type="submit" value="Track Daily Goals" id="daily-goals">
+<div id="habits-form-container">
+  <form id="habits-form" action="/habits" method="POST">
+    <label>What did you do?
+      <select name="what">
+        <option value="Took a shower">Took a shower</option>
+        <option value="Got something to eat">Got something to eat</option>
+        <option value="Took medication">Took medication</option>
+        <option value="Brushed teeth">Brushed teeth</option>
+        <option value="Went for a walk">Went for a walk</option>
+        <option value="Got out of bed">Got out of bed</option>
+        <option value="Read a book">Read a book</option>
+        <option value="Meditated">Meditated</option>
+        <option value="Nothing">Nothing</option>
+        <option value="Went to the gym">Went to the gym</option>
+        <option value="Washed your face">Washed your face</option>
+      </select>
+    </label>
+    <br><br>
+    <label>When did you do it?
+      <select name="when">
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+        <option value="Nighttime">Nighttime</option>
+      </select>
+    </label>
+    <br><br>
+    <label>Where did you do it?
+      <select name="where">
+        <option value="Kitchen">Kitchen</option>
+        <option value="Bathroom">Bathroom</option>
+        <option value="Park">Park</option>
+        <option value="Gym">Gym</option>
+        <option value="Bedroom">Bedroom</option>
+        <option value="Living Room">Living Room</option>
+        <option value="Garden">Garden</option>
+        <option value="Dining Room">Dining Room</option>
+        <option value="School">School</option>
+        <option value="Library">Library</option>
+      </select>
+    </label>
+    <br><br>
+    <label>How long did it take?
+      <select name="howLong">
+        <option value="1 Minute">1 minute</option>
+        <option value="2 Minutes">2 minutes</option>
+        <option value="5 Minutes">5 minutes</option>
+        <option value="10 Minutes">10 minutes</option>
+        <option value="15 Minutes">15 minutes</option>
+        <option value="30 Minutes">30 Minutes</option>
+        <option value="1 hour">1 hour</option>
+        <option value="2 hours">2 hours</option>
+        <option value="3 hours">3 hours</option>
+        <option value="4 hours">4 hours</option>
+        <option value="5 hours">5 hours</option>
+        <option value="6 hours">6 hours</option>
+        <option value="7 hours">7 hours</option>
+        <option value="8 hours">8 hours</option>
+        <option value="9 hours">9 hours</option>
+        <option value="10 hours">10 hours</option>
+        <option value="11 hours">11 hours</option>
+        <option value="12 hours">12 hours</option>
+      </select>
+    </label>
+    <br><br>
+    <label> Did you finish?
+      <select name="finished">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </label>
+    <br><br>
+    <input type="submit" value="Track Daily Goals" id="daily-goals">
+  </form>
+</div>
 
-</form>
 <p><%= errorMsg %></p>
 
-  <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

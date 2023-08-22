@@ -1,46 +1,97 @@
+/* Existing CSS */
+
 * {
-  background-color: rgb(104, 152, 168);
+  background-color: rgb(129, 182, 220);
 }
 
 body {
   align-items: center;
-}
-
-
-
-a {
-  color: #043042;
-  font-size: 20px;
-  font-weight: 3000;
-}
-h1, h2, tr, th, .note-form {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
   font-family: 'Sintony', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #043042;
 }
 
-table {
-  font-size: 15px;
-  }
-table tbody th {
-  padding: 6px;
-  border-bottom: 2px solid blue;
+/* index.ejs */
+.home-page-intro {
+  margin: 0; 
+  padding: 20px;
+  font-size: 50px;
+  font-family: 'Sintony', sans-serif;
+  font-weight: 300;
+  color: #043042;
+  text-align: center;
 }
 
-label {
-  float: top
+/* ... other existing styles ... */
+
+/* New CSS */
+
+/* Apply styles to the whole page */
+#show-page {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 20px;
+  border: 1px solid #0a0202;
 }
-.note-form {
+
+/* Style the habit information */
+#habit-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  border: 300px;
+  text-align: center;
+}
+
+/* Style the notes section */
+#notes-section {
+  margin-top: 20px;
+}
+
+/* Style the notes table */
+#notes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#notes-table th,
+#notes-table td {
+  padding: 10px;
+  border: 1px solid #0a0101;
+}
+
+/* Style the form for adding notes */
+#note-form {
+  margin-top: 10px;
+}
+/* 
+#note-form label, */
+#note-form textarea,
+#note-form input[type="submit"] {
+  display: relative;
+  margin-bottom: 5px;
+}
+
+/* Existing CSS continues... */
+.Delete-Note-Button {
+  background-color: #043042;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
   display: inline-block;
-  margin-right: 10px;
-}
-.delete-form {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.delete-form button {
-  color: red      
-}
-
-.login img{
-  height: 35px
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
 }
